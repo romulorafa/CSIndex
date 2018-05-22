@@ -16,7 +16,7 @@ _Python 3.6.5_
 **Editor de código:** _Visual Code Studio_ Versão 1.23.1
 **Extensão Chrome:** Allow-Control-Allow-Origin  
 
-### Descrição do Programa
+### DESCRIÇÃO DO APPLICAÇÃO
 
 **PROPOSTA:** ser projetada e implementada para o sistema *CSIndex*, uma sistema de indexação e classificação da produção científica brasileira em Ciência da Computação (desenvolvido no Departamento de Ciência da Computação / UFMG)
 
