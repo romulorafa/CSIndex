@@ -6,7 +6,7 @@ import csv
 
 app = Flask(__name__, template_folder='templates')
 
-# CONSULTA 1 --> REVISAR E TESTAR
+# CONSULTA 1 
 # Número de publicações em uma determinada conferência de uma área
 @app.route('/numeroPubsConferenciaDeUmaArea/<string:conferencia>/<string:area>')
 def numeroPubsConferenciaDeUmaArea(conferencia, area):
@@ -29,7 +29,7 @@ def numeroPubsConferenciaDeUmaArea(conferencia, area):
                 {'Conferencia da area ' + area: row[0], 'Quantidade de publicacoes': row[1]})
     return 'ARQUIVO GERADO 1'
 
-# CONSULTA 2 --> REVISAR E TESTAR
+# CONSULTA 2 
 # Número de publicações no conjunto de conferências de uma área
 @app.route('/numeroPubliNoConjuntoDeConferenciasDeUmaArea/<area>')
 def numeroPubliNoConjuntoDeConferenciasDeUmaArea(area):
@@ -44,7 +44,7 @@ def numeroPubliNoConjuntoDeConferenciasDeUmaArea(area):
     return str(contPublicacoes)
 
 
-# CONSULTA 3 --> REVISAR E TESTAR
+# CONSULTA 3 
 # Scores de todos os departamentos em uma área
 @app.route('/scoresDepartamentosDaArea/<string:area>')
 def scoresDepartamentosDaArea(area):
@@ -64,7 +64,7 @@ def scoresDepartamentosDaArea(area):
                              area: row[0], 'Score': row[1]})
     return 'ARQUIVO GERADO 3'
 
-# CONSULTA 4 --> REVISAR E TESTAR
+# CONSULTA 4 
 # Score de um determinado departamento em uma área.
 @app.route('/scoreDeUmDepartamentoEmUmaArea/<departamento>/<area>')
 def scoreDeUmDepartamentoEmUmaArea(departamento, area):
@@ -86,7 +86,7 @@ def scoreDeUmDepartamentoEmUmaArea(departamento, area):
                 {'Departamento': departamento, 'Score': row})
     return 'ARQUIVO GERADO 4'
 
-# CONSULTA 5 --> REVISAR E TESTAR
+# CONSULTA 5 
 # Número de professores que publicam em uma determinada área (organizados por departamentos)
 @app.route('/numeroProfsPorArea/<string:area>')
 def numeroProfsPorArea(area):
@@ -107,7 +107,7 @@ def numeroProfsPorArea(area):
                              area: row[0], 'Numero de professores': row[1]})
     return 'ARQUIVO GERADO 5'
 
-# CONSULTA 6 --> REVISAR E TESTAR
+# CONSULTA 6 
 # Número de professores de um determinado departamento que publicam em uma área
 @app.route('/numeroProfsDepartamentoPublicaramEmUmaArea/<departamento>/<area>')
 def numeroProfsDepartamentoPublicaramEmUmaArea(departamento, area):
@@ -128,7 +128,7 @@ def numeroProfsDepartamentoPublicaramEmUmaArea(departamento, area):
                 {'Departamento': departamento, 'N de Professores': row})#sem mostrar a coluna de departamento
     return 'ARQUIVO GERADO 6'
 
-# CONSULTA 7 --> REVISAR E TESTAR
+# CONSULTA 7 
 # Todos os papers de uma área (ano, título, deptos e autores)
 @app.route('/papersDeUmaArea/<string:area>')
 def papersDeUmaArea(area):
@@ -149,7 +149,7 @@ def papersDeUmaArea(area):
                 {'Ano': row[0], 'Titulo': row[2], 'Departamento': row[3], 'Autores': row[4]})#sem mostrar a coluna de departamento
     return 'ARQUIVO GERADO 7'
 
-# CONSULTA 8 --> REVISAR E TESTAR
+# CONSULTA 8 
 # Todos os papers de uma área em um determinado ano
 @app.route('/papersDeUmaAreaDeterminadoAno/<ano>/<area>')
 def papersDeUmaAreaDeterminadoAno(ano, area):
@@ -170,7 +170,7 @@ def papersDeUmaAreaDeterminadoAno(ano, area):
                              area: row[1], 'Paper': row[2]})
     return 'ARQUIVO GERADO 8'
 
-# CONSULTA 9 --> REVISAR E TESTAR
+# CONSULTA 9 
 # Todos os papers de um departamento em uma área
 @app.route('/papersDepartamentoEmUmaArea/<string:departamento>/<string:area>')
 def papersDepartamentoEmUmaArea(departamento, area):
@@ -191,7 +191,7 @@ def papersDepartamentoEmUmaArea(departamento, area):
                              area: row[1], 'Paper': row[2]})
     return 'ARQUIVO GERADO 9'
 
-# CONSULTA 10 --> REVISAR E TESTAR
+# CONSULTA 10 
 # Todos os papers de um professor (dado o seu nome)
 @app.route('/todosPapersDeUmProfessor/<string:nomeProfessor>')
 def todosPapersDeUmProfessor(nomeProfessor):
