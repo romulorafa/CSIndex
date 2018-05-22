@@ -16,9 +16,9 @@ _Python 3.6.5_
 **Editor de código:** _Visual Code Studio_ Versão 1.23.1
 **Extensão Chrome:** Allow-Control-Allow-Origin  
 
-#### Descrição do Programa
+### Descrição do Programa
 
-**PROPOSTA:** ser projetada e implementada para o sistema *CSIndex*, uma sistema de indexação e classificação da produção científica brasileira em Ciência da Computação
+**PROPOSTA:** ser projetada e implementada para o sistema *CSIndex*, uma sistema de indexação e classificação da produção científica brasileira em Ciência da Computação (desenvolvido no Departamento de Ciência da Computação / UFMG)
 
 **CHAMADAS:** os serviços da API compreendem 10 chamadas/consultas:  
 _(1) Número de publicações em uma determinada conferência de uma área_  
@@ -61,4 +61,4 @@ _(10) Todos os papers de um professor (dado o seu nome)_
 CHAMADA 1: http://localhost:5000/todosPapersDeUmProfessor/Marco-Tulio-Valente  
 CHAMADA 2: http://localhost:5000/todosPapersDeUmProfessor/Mario-Sergio-Alvim  
 
-**SAÍDAS:** todas as chamadas acima retornam seu resultado gerando um arquivo .CSV, exceto a chamada (2) cujo retorno acontece em tela.  
+**SAÍDAS:** todas as chamadas acima retornam seu resultado gerando um arquivo .CSV, exceto a chamada (2) cujo retorno acontece em tela.
