@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>http-client</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container align-items-center align-content-center">
+      <div class="jumbotron">
+          <h4>1. Número de publicações em uma determinada conferência de uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Conferência ESEM da área se</p>
+                  <p><a id="btn1-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result1-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Conferência LATIN da área theory</p>
+                  <p><a id="btn1-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result1-2">...</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h4>2. Número de publicações no conjunto de conferências de uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Área se</p>
+                  <p><a id="btn2-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result2-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Área theory</p>
+                  <p><a id="btn2-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result2-2">...</p>
+              </div>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <h4>3. Scores de todos os departamentos em uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Área se</p>
+                  <p><a id="btn3-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result3-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Área theory</p>
+                  <p><a id="btn3-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result3-2">...</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h4>4. Score de um determinado departamento em uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Departamento: UFMG; Área: theory</p>
+                  <p><a id="btn4-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result4-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Departamento: UFMG; Área: se </p>
+                  <p><a id="btn4-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result4-2">...</p>
+              </div>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <h4>5. Número de professores que publicam em uma determinada área (organizados por departamentos)</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Área se</p>
+                  <p><a id="btn5-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result5-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Área theory</p>
+                  <p><a id="btn5-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result5-2">...</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h4>6. Número de professores de um determinado departamento que publicam em uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Departamento UFSCAR da área se</p>
+                  <p><a id="btn6-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result6-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Departamento UFRN da área se</p>
+                  <p><a id="btn6-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result6-2">...</p>
+              </div>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <h4>7. Todos os papers de uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Área se</p>
+                  <p><a id="btn7-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result7-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2:  Área theory</p>
+                  <p><a id="btn7-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result7-2">...</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h4>8. Todos os papers de uma área em um determinado ano</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Ano de 2017 da área se</p>
+                  <p><a id="btn8-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result8-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Ano de 2018 da área se</p>
+                  <p><a id="btn8-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result8-2">...</p>
+              </div>
+          </div>
+      </div>
+      <div class="jumbotron">
+          <h4>9. Todos os papers de um departamento em uma área</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Departamento ICPC da área se</p>
+                  <p><a id="btn9-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result9-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Departamento LATIN da área theory</p>
+                  <p><a id="btn9-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result9-2">...</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="jumbotron">
+          <h4>10. Todos os papers de um professor (dado-o-seu-nome)</h4>
+          <div class="row">
+              <div class="col">
+                  <p>Teste1: Mario Sergio Alvim </p>
+                  <p><a id="btn10-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result10-1">...</p>
+              </div>
+              <div class="col">
+                  <p>Teste2: Wagner Meira </p>
+                  <p><a id="btn10-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
+                  <p>Resultado:</p>
+                  <p id="result10-2">...</p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+<script>
+// Primeiro serviço
+$("#btn1-1").click(function(){
+  $.get("http://localhost:5000/numeroPubsConferenciaDeUmaArea/ESEM/se", function(data) {
+    $("#result1-1").text(data);
+  });
+});
+$("#btn1-2").click(function(){
+  $.get("http://localhost:5000/numeroPubsConferenciaDeUmaArea/LATIN/theory", function(data) {
+    $("#result1-2").text(data);
+  });
+});
+// Segundo serviço
+$("#btn2-1").click(function(){
+  $.get("http://localhost:5000/numeroPubliNoConjuntoDeConferenciasDeUmaArea/se", function(data) {
+    $("#result2-1").text(data);
+  });
+});
+$("#btn2-2").click(function(){
+  $.get("http://localhost:5000/numeroPubliNoConjuntoDeConferenciasDeUmaArea/theory", function(data) {
+    $("#result2-2").text(data);
+  });
+});
+
+// Terceiro serviço
+$("#btn3-1").click(function(){
+  $.get("http://localhost:5000/scoresDepartamentosDaArea/se", function(data) {
+    $("#result3-1").text(data);
+  });
+});
+$("#btn3-2").click(function(){
+  $.get("http://localhost:5000/scoresDepartamentosDaArea/theory", function(data) {
+    $("#result3-2").text(data);
+  });
+});
+// Quarto serviço
+$("#btn4-1").click(function(){
+  $.get("http://localhost:5000/scoreDeUmDepartamentoEmUmaArea/UFMG/theory", function(data) {
+    $("#result4-1").text(data);
+  });
+});
+$("#btn4-2").click(function(){
+  $.get("http://localhost:5000/scoreDeUmDepartamentoEmUmaArea/UFMG/se", function(data) {
+    $("#result4-2").text(data);
+  });
+});
+
+// Quinto serviço
+$("#btn5-1").click(function(){
+  $.get("http://localhost:5000/numeroProfsPorArea/se", function(data) {
+    $("#result5-1").text(data);
+  });
+});
+$("#btn5-2").click(function(){
+  $.get("http://localhost:5000/numeroProfsPorArea/theory", function(data) {
+    $("#result5-2").text(data);
+  });
+});
+// Sexto serviço
+$("#btn6-1").click(function(){
+  $.get("http://localhost:5000/numeroProfsDepartamentoPublicaramEmUmaArea/UFSCAR/se", function(data) {
+    $("#result6-1").text(data);
+  });
+});
+$("#btn6-2").click(function(){
+  $.get("http://localhost:5000/numeroProfsDepartamentoPublicaramEmUmaArea/UFRN/se", function(data) {
+    $("#result6-2").text(data);
+  });
+});
+
+// Sétimo serviço
+$("#btn7-1").click(function(){
+  $.get("http://localhost:5000/papersDeUmaArea/se", function(data) {
+    $("#result7-1").text(data);
+  });
+});
+$("#btn7-2").click(function(){
+  $.get("http://localhost:5000/papersDeUmaArea/theory", function(data) {
+    $("#result7-2").text(data);
+  });
+});
+// Oitavo serviço
+$("#btn8-1").click(function(){
+  $.get("http://localhost:5000/papersDeUmaAreaDeterminadoAno/2017/se", function(data) {
+    $("#result8-1").text(data);
+  });
+});
+$("#btn8-2").click(function(){
+  $.get("http://localhost:5000/papersDeUmaAreaDeterminadoAno/2018/se", function(data) {
+    $("#result8-2").text(data);
+  });
+});
+
+// Nono serviço
+$("#btn9-1").click(function(){
+  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/ICPC/se", function(data) {
+    $("#result9-1").text(data);
+  });
+});
+$("#btn9-2").click(function(){
+  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/LATIN/theory", function(data) {
+    $("#result9-2").text(data);
+  });
+});
+// Décimo serviço
+$("#btn10-1").click(function(){
+  $.get("http://localhost:5000/todosPapersDeUmProfessor/Mario-Sergio-Alvim", function(data) {
+    $("#result10-1").text(data);
+  });
+});
+$("#btn10-2").click(function(){
+  $.get("http://localhost:5000/todosPapersDeUmProfessor/Wagner-Meira", function(data) {
+    $("#result10-2").text(data);
+  });
+});
+
+</script>
+
+</html>
