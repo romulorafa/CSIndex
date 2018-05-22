@@ -154,13 +154,13 @@
           <h4>9. Todos os papers de um departamento em uma área</h4>
           <div class="row">
               <div class="col">
-                  <p>Teste1: Departamento ICPC da área se</p>
+                  <p>Teste1: Departamento UFMG da área se</p>
                   <p><a id="btn9-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
                   <p>Resultado:</p>
                   <p id="result9-1">...</p>
               </div>
               <div class="col">
-                  <p>Teste2: Departamento LATIN da área theory</p>
+                  <p>Teste2: Departamento UFPE da área se</p>
                   <p><a id="btn9-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
                   <p>Resultado:</p>
                   <p id="result9-2">...</p>
@@ -172,13 +172,13 @@
           <h4>10. Todos os papers de um professor (dado-o-seu-nome)</h4>
           <div class="row">
               <div class="col">
-                  <p>Teste1: Mario Sergio Alvim </p>
+                  <p>Teste1: Marco Tulio Valente </p>
                   <p><a id="btn10-1" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
                   <p>Resultado:</p>
                   <p id="result10-1">...</p>
               </div>
               <div class="col">
-                  <p>Teste2: Wagner Meira </p>
+                  <p>Teste2: Mario Sergio Alvim </p>
                   <p><a id="btn10-2" class="btn btn-primary" role="button" href="#">Fazer request</a></p>
                   <p>Resultado:</p>
                   <p id="result10-2">...</p>
@@ -193,7 +193,8 @@
 <script>
 // Primeiro serviço
 $("#btn1-1").click(function(){
-  $.get("http://localhost:5000/numeroPubsConferenciaDeUmaArea/ESEM/se", function(data) {
+  $.get("http://localhost:5000/numeroPubsConferenciaDeUmaArea/FSE/se", function(data) {
+    console.log("data " + data);
     $("#result1-1").text(data);
   });
 });
@@ -239,7 +240,7 @@ $("#btn4-2").click(function(){
 
 // Quinto serviço
 $("#btn5-1").click(function(){
-  $.get("http://localhost:5000/numeroProfsPorArea/se", function(data) {
+  $.get("http://localhost:5000/numeroProfsPorArea/ai", function(data) {
     $("#result5-1").text(data);
   });
 });
@@ -285,23 +286,23 @@ $("#btn8-2").click(function(){
 
 // Nono serviço
 $("#btn9-1").click(function(){
-  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/ICPC/se", function(data) {
+  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/UFMG/se", function(data) {
     $("#result9-1").text(data);
   });
 });
 $("#btn9-2").click(function(){
-  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/LATIN/theory", function(data) {
+  $.get("http://localhost:5000/papersDepartamentoEmUmaArea/UFPE/se", function(data) {
     $("#result9-2").text(data);
   });
 });
 // Décimo serviço
 $("#btn10-1").click(function(){
-  $.get("http://localhost:5000/todosPapersDeUmProfessor/Mario-Sergio-Alvim", function(data) {
+  $.get("http://localhost:5000/todosPapersDeUmProfessor/Marco-Tulio-Valente", function(data) {
     $("#result10-1").text(data);
   });
 });
 $("#btn10-2").click(function(){
-  $.get("http://localhost:5000/todosPapersDeUmProfessor/Wagner-Meira", function(data) {
+  $.get("http://localhost:5000/todosPapersDeUmProfessor/Mario-Sergio-Alvim", function(data) {
     $("#result10-2").text(data);
   });
 });
