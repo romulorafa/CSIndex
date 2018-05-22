@@ -27,7 +27,7 @@ def numeroPubsConferenciaDeUmaArea(conferencia, area):
         for row in DATA:
             writer.writerow(
                 {'Conferencia da area ' + area: row[0], 'Quantidade de publicacoes': row[1]})
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 1'
 
 # CONSULTA 2 --> REVISAR E TESTAR
 # Número de publicações no conjunto de conferências de uma área
@@ -40,6 +40,7 @@ def numeroPubliNoConjuntoDeConferenciasDeUmaArea(area):
         data = csv.DictReader(file, delimiter=';', quotechar='|')
         for row in data:
             contPublicacoes = contPublicacoes + 1
+    
     return str(contPublicacoes)
 
 
@@ -61,7 +62,7 @@ def scoresDepartamentosDaArea(area):
         for row in DATA:
             writer.writerow({'Departamento da area ' +
                              area: row[0], 'Score': row[1]})
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 3'
 
 # CONSULTA 4 --> REVISAR E TESTAR
 # Score de um determinado departamento em uma área.
@@ -83,7 +84,7 @@ def scoreDeUmDepartamentoEmUmaArea(departamento, area):
         for row in DATA:
             writer.writerow(
                 {'Departamento': departamento, 'Score': row})
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 4'
 
 # CONSULTA 5 --> REVISAR E TESTAR
 # Número de professores que publicam em uma determinada área (organizados por departamentos)
@@ -104,7 +105,7 @@ def numeroProfsPorArea(area):
         for row in DATA:
             writer.writerow({'Departamento da area ' +
                              area: row[0], 'Numero de professores': row[1]})
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 5'
 
 # CONSULTA 6 --> REVISAR E TESTAR
 # Número de professores de um determinado departamento que publicam em uma área
@@ -125,7 +126,7 @@ def numeroProfsDepartamentoPublicaramEmUmaArea(departamento, area):
         for row in profs:
             writer.writerow(
                 {'Departamento': departamento, 'N de Professores': row})#sem mostrar a coluna de departamento
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 6'
 
 # CONSULTA 7 --> REVISAR E TESTAR
 # Todos os papers de uma área (ano, título, deptos e autores)
@@ -146,24 +147,28 @@ def papersDeUmaArea(area):
         for row in DATA:
             writer.writerow(
                 {'Ano': row[0], 'Titulo': row[2], 'Departamento': row[3], 'Autores': row[4]})#sem mostrar a coluna de departamento
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 7'
 
 # CONSULTA 8 --> REVISAR E TESTAR
 # Todos os papers de uma área em um determinado ano
 @app.route('/papersDeUmaAreaDeterminadoAno/<ano>/<area>')
 def papersDeUmaAreaDeterminadoAno(ano, area):
     filename = "../data/" + area + "-out-papers.csv"
-    papers = []
     with open(filename, 'r') as file:
+        papers = []
         data = csv.reader(file)
         for row in data:
             if(row[0] == ano):
-                papers.append(row[2])
-    si = StringIO()
-    cw = csv.writer(si, quoting=csv.QUOTE_ALL)
-    cw.writerow(papers)
-    output = make_response(si.getvalue())
-    return output
+                papers.append(row)
+    with open('papers_'+ano+'_'+area+'.csv', 'w') as csvfile:
+        header = ['Conferencia ' + area, 'Paper']
+        writer = csv.DictWriter(
+            csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=header)
+        writer.writeheader()
+        for row in papers:
+            writer.writerow({'Conferencia ' +
+                             area: row[1], 'Paper': row[2]})
+    return 'ARQUIVO GERADO 8'
 
 # CONSULTA 9 --> REVISAR E TESTAR
 # Todos os papers de um departamento em uma área
@@ -174,33 +179,38 @@ def papersDepartamentoEmUmaArea(departamento, area):
         DATA = []
         data = csv.reader(file)
         for row in data:
-            if(row[1] == departamento):
+            if(row[3] == departamento):
                 DATA.append(row)
     with open('papers_'+departamento+'_'+area+'.csv', 'w') as csvfile:
-        header = ['Departamento da area ' + area, 'Paper']
+        header = ['Conferencia da area ' + area, 'Paper']
         writer = csv.DictWriter(
             csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=header)
         writer.writeheader()
         for row in DATA:
-            writer.writerow({'Departamento da area ' +
+            writer.writerow({'Conferencia da area ' +
                              area: row[1], 'Paper': row[2]})
-    return 'ARQUIVO GERADO'
+    return 'ARQUIVO GERADO 9'
 
 # CONSULTA 10 --> REVISAR E TESTAR
 # Todos os papers de um professor (dado o seu nome)
 @app.route('/todosPapersDeUmProfessor/<string:nomeProfessor>')
 def todosPapersDeUmProfessor(nomeProfessor):
     filename = "../data/profs/search/" + nomeProfessor + ".csv"
-    papers = []
+
     with open(filename, 'r') as file:
+        papers = []
         data = csv.reader(file)
         for row in data:
-            papers.append(row[2])
-    si = StringIO()
-    cw = csv.writer(si, quoting=csv.QUOTE_ALL)
-    cw.writerow(papers)
-    output = make_response(si.getvalue())
-    return output
+            papers.append(row)
+    with open('papers_'+nomeProfessor+'.csv', 'w') as csvfile:
+        header = ['Conferencia da area ' + nomeProfessor, 'Paper']
+        writer = csv.DictWriter(
+            csvfile, delimiter=';', quotechar='|', quoting=csv.QUOTE_MINIMAL, fieldnames=header)
+        writer.writeheader()
+        for row in papers:
+            writer.writerow({'Conferencia da area ' +
+                             nomeProfessor: row[1], 'Paper': row[2]})
+    return 'ARQUIVO GERADO 10'
 
 # PRINCIPAL
 if __name__ == '__main__':
