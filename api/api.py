@@ -33,7 +33,7 @@ def numeroPubsConferenciaDeUmaArea(conferencia, area):
 # Número de publicações no conjunto de conferências de uma área
 @app.route('/numeroPubliNoConjuntoDeConferenciasDeUmaArea/<area>')
 def numeroPubliNoConjuntoDeConferenciasDeUmaArea(area):
-    contPublicacoes = 1
+    contPublicacoes = 0
 
     filename = "../data/" + area + "-out-papers.csv"
     with open(filename, 'r') as file:
